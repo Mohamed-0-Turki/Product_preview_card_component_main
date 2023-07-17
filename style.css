@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Dark-cyan-hover: hsl(157, 47%, 22%);
+    --Cream: hsl(30, 38%, 9%);
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3ebe4;
+    height: 100vh;
+}
+
+.container .grid {
+    width: 800px;
+    margin: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "product-img product";
+    overflow: hidden;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.container .grid .product-img {
+    grid-area: product-img;
+}
+
+.container .grid .product-img img {
+    max-width: 100%;
+}
+
+.container .grid .product {
+    grid-area: product;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: var(--White);
+    padding: 35px;
+}
+
+.container .grid .product .product-type {
+    color: var(--Dark-grayish-blue);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 8px;
+}
+
+.container .grid .product .product-name {
+    color: var(--Cream);
+    font-family: 'Fraunces', serif;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 44px;
+}
+
+.container .grid .product .description {
+    color: var(--Dark-grayish-blue);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 32px;
+}
+
+.container .grid .product .price {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.container .grid .product .price .real-price {
+    color: var(--Dark-grayish-blue);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: line-through;
+}
+
+.container .grid .product .price .rival {
+    color: var(--Dark-cyan);
+    font-family: 'Fraunces', serif;
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.container .grid .product .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    background-color: var(--Dark-cyan);
+    color: var(--White);
+    height: 57px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.container .grid .product .button img {
+    height: 20px;
+}
+
+.container .grid .product .button:hover {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Dark-cyan-hover);
+}
+
+@media only screen and (max-width: 750px) {
+    .container {
+        min-height: 100vh;
+        height: auto;
+    }
+
+    .container .grid {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container .grid .product-img {
+        width: 100%;
+    }
+
+    .container .grid .product-img img {
+        width: 100%;
+        max-height: 450px;
+        object-fit: cover;
+    }
+
+    .container .grid .product .product-type,
+    .container .grid .product .product-name,
+    .container .grid .product .description,
+    .container .grid .product .price {
+        padding-bottom: 15px;
+    }
+
+    .container .grid .product .product-type {
+        font-size: 15px;
+    }
+
+    .container .grid .product .product-name {
+        font-size: 40px;
+    }
+
+    .container .grid .product .description {
+        font-size: 18px;
+        line-height: 29px;
+    }
+
+    .container .grid .product .price .real-price {
+        font-size: 16px;
+    }
+
+    .container .grid .product .price .rival {
+        font-size: 41px;
+    }
+
+    .container .grid .product .button {
+        gap: 12px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .container .grid .product .button img {
+        height: 18px;
+    }
+}
